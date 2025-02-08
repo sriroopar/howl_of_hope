@@ -4,6 +4,7 @@ import NavBar from './pages/NavBar'
 import Login from './pages/Login';
 import Register from './pages/Register';
 import UserProfile from './pages/UserProfile';
+import Landing from './pages/Landing';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<UserProfile />} />
-            <Route path='/' exact element={<h1>Welcome to Howl of Hope</h1>} />
+            <Route path='/' exact element={<Landing />} />
           </Routes>
         </BrowserRouter>
       </div>

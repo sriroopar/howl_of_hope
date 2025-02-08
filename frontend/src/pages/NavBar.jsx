@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function NavBar() {
     return (
         <nav>
-            <div>Howl Of Hope</div>
+            <Link to="/">Howl Of Hope</Link>
             <ul>
                 <Link to="/login">Login</Link>
                 <Link to="/register">Register</Link>
