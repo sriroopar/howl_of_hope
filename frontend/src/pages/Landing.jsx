@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Landing.css';
 
 function Landing() {
-  const isAdmin = true;
+  const isAdmin = false;
 
   return (
     <div className="landing-container">

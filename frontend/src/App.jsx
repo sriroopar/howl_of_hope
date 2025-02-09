@@ -14,6 +14,7 @@ import Cart from './pages/Cart';
 import { useEffect, useState } from 'react';
 import AdminOptions from './pages/AdminOptions';
 import AddMenu from './pages/AddMenu';
+import Success from './pages/Success';
 
 function App() {
   const [selectedItems, setSelectedItems] = useState([])
@@ -43,6 +44,7 @@ function App() {
               <Route path="/today-menu" element={<AddMenu />} />
               <Route path="/admin-options" element={<AdminOptions />} />
               <Route path="/cart/:foodType" element={<Cart selectedItems={selectedItems} setSelectedItems={setSelectedItems} />} />
+              <Route path="/success/:user" element={<Success  />} />
               <Route path='/' exact element={<Landing />} />
             </Routes>
           </div>

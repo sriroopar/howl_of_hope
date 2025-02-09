@@ -10,7 +10,8 @@ function Cart({ selectedItems, setSelectedItems }) {
 
     return (
         <div className="landing-container">
-            <h1>Cart for {foodType === 'Readymade' ? 'Ready Made Foods' : 'Pantry'}</h1>
+            <h1>Cart for {foodType === 'Readymade' && 'Ready Made Foods'} {foodType === 'Raw-material' && 'Pantry'}</h1>
+            {foodType === 'admin' && <h1>Edit Menu items</h1>}
             <br />
             <br />
             <div className='cards-row-container'>
@@ -22,7 +23,7 @@ function Cart({ selectedItems, setSelectedItems }) {
                     </div>
                 ))}
             </div>
-            {selectedItems.length != 0 && <Link to={`/cart/${foodType}`} className='large-button'>Confirm Purchase</Link>}
+            {selectedItems.length != 0 && <Link to={foodType !== 'admin' ? '/success/user' : '/success/admin'} className='large-button'>{foodType !== 'admin' ? 'Confirm Purchase' : 'Confirm Edits'}</Link>}
         </div>
     )
 }
