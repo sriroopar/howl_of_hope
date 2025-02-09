@@ -5,7 +5,6 @@
   text-align: center;
   padding: 20px;
   padding-top: 60px;
-  /* Adjust based on navbar height */
 }
 
 .landing-container-2 {
@@ -15,8 +14,6 @@
   text-align: center;
   min-height: 800px;
 }
-
-
 
 .title {
   font-size: 3.5rem;

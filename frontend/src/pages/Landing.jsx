@@ -31,7 +31,7 @@ function Landing() {
           <p>From meal plans to must-have tickets, we’re hooking you up with the essentials that keep campus life going.</p>
         </Link>
 
-        <Link to="/volunteer" className="card hover">
+        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSegPhESBCeDQoUKPxt5PB7tZcFup6zVD4LpI6sWTESk_OasIw/viewform?usp=dialog" className="card hover">
           <h2>🙌 Volunteer</h2>
           <p>Make a difference! Help us distribute, organize, and support your fellow students in need. Let’s do this together!</p>
         </Link>

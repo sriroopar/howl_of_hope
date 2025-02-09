@@ -1,0 +1,106 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(249, 236, 232);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 80px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-left {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-right {
+    flex: 3;
+    padding: 20px;
+}
+
+.profile-right h2 {
+    color: var(--font-primary);
+    margin-bottom: 20px;
+}
+
+.profile-right p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.profile-right label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.profile-right input,
+.profile-right select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.not-logged-in {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #d9534f;
+    margin-top: 50px;
+}
+
+.snap-info {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+.snap-info a {
+    color: #007BFF;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.snap-info a:hover {
+    text-decoration: underline;
+}
+
+.howl-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Reduces spacing between options */
+    margin-top: 5px;
+}
+
+.howl-options div {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.howl-options input {
+    margin-right: 5px;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
