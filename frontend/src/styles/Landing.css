@@ -11,6 +11,12 @@
     font-size: 3.5rem;
     font-weight: bold;
   }
+
+  .sub-title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 7px;
+  }
   
   .paragraph {
     margin-top: 30px;
