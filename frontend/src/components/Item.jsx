@@ -1,21 +1,31 @@
 import React, { useState } from 'react'
 import image from '../assets/image.png';
 
-function Item({ item }) {
+function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
+    const [quantity, setQuantity] = useState(isAdmin ? item.quantity : 0)
 
-    const [quantity, setQuantity] = useState(0)
+    const handleQuantityChange = (change) => {
+        const newQuantity = quantity + change;
 
-    const handleClick = () => {
-        setQuantity(prev => 1)
-    }
+        if (newQuantity < 0) return;
 
-    const increaseQuantity = () => {
-        setQuantity(prev => prev + 1)
-    }
+        setQuantity(newQuantity);
 
-    const decreaseQuantity = () => {
-        setQuantity(prev => prev - 1)
-    }
+        setSelectedItems(prev => {
+            if (newQuantity === 0) {
+                return prev.filter(si => si._id !== item._id);
+            } else {
+                const exists = prev.some(si => si._id === item._id);
+                if (exists) {
+                    return prev.map(si =>
+                        si._id === item._id ? { ...si, quantity: newQuantity } : si
+                    );
+                } else {
+                    return [...prev, { ...item, quantity: newQuantity }];
+                }
+            }
+        });
+    };
 
     function formatTimestamp(isoString) {
         const date = new Date(isoString);
@@ -35,17 +45,17 @@ function Item({ item }) {
 
     return (
         <div className='card grid-col'>
+            <h3>{item.name}</h3>
             <div className='row1'>
                 <img src={image} alt="" />
                 <div>
-                    <h3>{item.name}</h3>
                     <p>{item.quantity} items left</p>
                     <p>{formatTimestamp(item.expiry)}</p>
-                    {quantity == 0 ? (<button onClick={handleClick}>Add to Cart</button>) : (
+                    {(quantity == 0 && !isAdmin) ? (<button onClick={() => handleQuantityChange(1)}>Add to Cart</button>) : (
                         <div className='quantity'>
-                            <button onClick={decreaseQuantity}>-</button>
+                            <button onClick={() => handleQuantityChange(-1)}>-</button>
                             <p>{quantity}</p>
-                            <button onClick={increaseQuantity}>+</button>
+                            <button onClick={() => handleQuantityChange(1)}>+</button>
                         </div>
                     )}
                 </div>
@@ -54,7 +64,7 @@ function Item({ item }) {
             <div className='row2'>
                 <div className="tags">
                     {
-                        item.dietry_restrictions.map((dr, idx) => <span key={idx} className="tag">{dr}</span>)
+                        item.dietary_restrictions.map((dr, idx) => <span key={idx} className="tag">{dr}</span>)
                     }
                 </div>
                 <p>{item.description}</p>
