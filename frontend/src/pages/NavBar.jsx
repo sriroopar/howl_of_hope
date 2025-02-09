@@ -2,17 +2,20 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 function NavBar() {
-    const [isAuthenticated, setIsAuthenticated] = useState(true)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    const handleUserSignIn = () => {
+        console.log('Sign in attempt')
+    }
 
     return (
         <nav>
-            <div className="wrapper">
+            <div>
                 <h1><Link to="/">Howl Of Hope</Link></h1>
                 <ul>
                     {!isAuthenticated ? (
                         <>
-                            <NavLink to="/login" className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink>
-                            <NavLink to="/register" className={({ isActive }) => isActive ? "active" : ""}>Register</NavLink>
+                            <Link onClick={handleUserSignIn}>Sign in with Google</Link>
                         </>
                     ) : (
                         <NavLink to="/profile" className={({ isActive }) => isActive ? "active" : ""}>User Profile</NavLink>

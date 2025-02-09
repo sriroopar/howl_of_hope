@@ -16,7 +16,7 @@ function App() {
       <div className="container">
         <BrowserRouter>
           <NavBar />
-          <div className='main wrapper'>
+          <div className='wrapper'>
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

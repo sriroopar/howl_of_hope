@@ -5,6 +5,14 @@ nav {
     background-color: var(--bg-secondary);
 }
 
+nav div {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav h1 {
     flex: 1;
 }
@@ -20,5 +28,6 @@ ul {
 }
 
 footer {
-    padding: 10px;
+    padding: 20px 10px;
+    min-height: 100%;
 }
