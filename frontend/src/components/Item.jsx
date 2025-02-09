@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
 import image from '../assets/image.png';
 
-function Item({ item }) {
+function Item({ item, setSelectedItems, selectedItems }) {
 
     const [quantity, setQuantity] = useState(0)
 
-    const handleClick = () => {
-        setQuantity(prev => 1)
-    }
+    const handleQuantityChange = (change) => {
+        const newQuantity = quantity + change;
 
-    const increaseQuantity = () => {
-        setQuantity(prev => prev + 1)
-    }
+        if (newQuantity < 0) return;
 
-    const decreaseQuantity = () => {
-        setQuantity(prev => prev - 1)
-    }
+        setQuantity(newQuantity);
+
+        setSelectedItems(prev => {
+            if (newQuantity === 0) {
+                return prev.filter(si => si._id !== item._id);
+            } else {
+                const exists = prev.some(si => si._id === item._id);
+                if (exists) {
+                    return prev.map(si =>
+                        si._id === item._id ? { ...si, quantity: newQuantity } : si
+                    );
+                } else {
+                    return [...prev, { _id: item._id, quantity: newQuantity }];
+                }
+            }
+        });
+    };
 
     function formatTimestamp(isoString) {
         const date = new Date(isoString);
@@ -41,11 +52,11 @@ function Item({ item }) {
                     <h3>{item.name}</h3>
                     <p>{item.quantity} items left</p>
                     <p>{formatTimestamp(item.expiry)}</p>
-                    {quantity == 0 ? (<button onClick={handleClick}>Add to Cart</button>) : (
+                    {quantity == 0 ? (<button onClick={() => handleQuantityChange(1)}>Add to Cart</button>) : (
                         <div className='quantity'>
-                            <button onClick={decreaseQuantity}>-</button>
+                            <button onClick={() => handleQuantityChange(-1)}>-</button>
                             <p>{quantity}</p>
-                            <button onClick={increaseQuantity}>+</button>
+                            <button onClick={() => handleQuantityChange(1)}>+</button>
                         </div>
                     )}
                 </div>

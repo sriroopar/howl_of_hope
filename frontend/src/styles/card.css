@@ -76,7 +76,8 @@
     font-size: 1rem;
 }
 
-.card button {
+.card button,
+.large-button {
     outline: none;
     border: 1px solid var(--bg-secondary);
     background-color: transparent;
@@ -92,6 +93,20 @@
 
 .card button:hover {
     background-color: var(--bg-secondary);
+}
+
+.large-button {
+    position: absolute;
+    bottom: 100px;
+    max-width: 700px;
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.large-button:hover {
+    background-color: var(--bg-tertiary);
 }
 
 .grid-col p {
