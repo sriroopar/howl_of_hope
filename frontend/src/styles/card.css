@@ -1,0 +1,128 @@
+.cards-2-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+}
+
+.cards-3-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.card,
+.card .grid-col {
+    background: rgb(249, 236, 232);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: grid;
+    grid-template-rows: 1fr 0.4fr;
+    height: max-content;
+    gap: 20px;
+}
+
+.landing-container-2 .card {
+    display: block;
+}
+
+.grid-col .row1 {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    max-height: 200px;
+}
+
+.grid-col .row1>div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card .quantity {
+    display: flex;
+    gap: 10px;
+}
+
+.grid-col .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px
+}
+
+.card.hover:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.grid-col h2,
+.landing-container-2 a h2 {
+    margin-bottom: 0;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+.card button {
+    outline: none;
+    border: 1px solid var(--bg-secondary);
+    background-color: transparent;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card .quantity p {
+    display: inline-block;
+}
+
+.card button:hover {
+    background-color: var(--bg-secondary);
+}
+
+.grid-col p {
+    text-align: left;
+}
+
+.card img {
+    width: 150px;
+    aspect-ratio: 1;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+.card .tags {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.card .tag {
+    padding: 2px 5px;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    min-width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
+.cards-2-container .center {
+    margin-top: 60px;
+    background-color: red;
+}
