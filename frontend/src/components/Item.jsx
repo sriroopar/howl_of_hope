@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import image from '../assets/image.png';
 
 function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
-
     const [quantity, setQuantity] = useState(isAdmin ? item.quantity : 0)
 
     const handleQuantityChange = (change) => {
@@ -65,7 +64,7 @@ function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
             <div className='row2'>
                 <div className="tags">
                     {
-                        item.dietry_restrictions.map((dr, idx) => <span key={idx} className="tag">{dr}</span>)
+                        item.dietary_restrictions.map((dr, idx) => <span key={idx} className="tag">{dr}</span>)
                     }
                 </div>
                 <p>{item.description}</p>

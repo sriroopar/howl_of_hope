@@ -2,7 +2,9 @@ import Item from '../components/Item'
 import { Link } from 'react-router-dom'
 
 function Items({ foodType, selectedItems, setSelectedItems, items, isAdmin }) {
-    const newItems = items.filter(d => d.type === foodType)
+    let newItems = items.filter(d => d.type === foodType)
+    newItems = newItems.map(nitem => ({ ...nitem, dietary_restrictions: nitem.dietary_restrictions.split(",") }))
+    console.log(newItems)
 
     return (
         <div className="landing-container">

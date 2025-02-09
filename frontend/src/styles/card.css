@@ -139,10 +139,10 @@
 }
 
 .card .tag {
-    padding: 2px 5px;
+    padding: 5px;
     background-color: var(--bg-secondary);
     border-radius: 4px;
-    min-width: 60px;
+    min-width: max-content;
     height: 30px;
     text-align: center;
 }
