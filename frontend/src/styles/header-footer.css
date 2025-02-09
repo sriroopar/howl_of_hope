@@ -1,0 +1,24 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+}
+
+nav h1 {
+    flex: 1;
+}
+
+nav a {
+    border-bottom: 2px solid var(--bg-secondary);
+}
+
+ul {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+footer {
+    padding: 10px;
+}

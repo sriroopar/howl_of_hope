@@ -1,0 +1,43 @@
+html {
+    min-height: 100vh;
+    font-family: "Nunito", serif;
+    background-color: var(--bg-primary);
+    color: var(--font-primary);
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+.container {
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100px 1fr 100px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-y: hidden;
+    height: 100%;
+    flex: 1;
+}
+
+a {
+    font-weight: 600;
+}
+
+.active {
+    border-bottom: 2px solid var(--font-primary);
+}
