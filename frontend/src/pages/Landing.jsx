@@ -1,20 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import '../styles/Landing.css'; 
+import '../styles/Landing.css';
 
 function Landing() {
+  const isAdmin = true;
+
   return (
     <div className="landing-container">
       <h1 className="title">All-In-One</h1>
       <h1>Sustain, Support, Share – Empowering Students, Reducing Waste!</h1>
       <p className="paragraph">
-        💚 Why waste when we can give? All-In-One is your go-to campus sustainability hub!  
-        Got extra food? Share it. Need essentials? We got you. Want to help? Join the movement.  
-        Because here, kindness isn’t random—it’s a lifestyle. 🌍✨  
+        💚 Why waste when we can give? All-In-One is your go-to campus sustainability hub!
+        Got extra food? Share it. Need essentials? We got you. Want to help? Join the movement.
+        Because here, kindness isn’t random—it’s a lifestyle. 🌍✨
       </p>
 
       <div className="cards-2-container">
-        <Link to="/food-options" className="card hover">
+        <Link to={isAdmin ? "/admin-options" : "/food-options"} className="card hover">
           <h2>🍽 Sustaining the Pack</h2>
           <p>Leftovers don’t belong in the trash! Registered students can grab extra food instead of it going to waste.</p>
         </Link>

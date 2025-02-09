@@ -180,3 +180,19 @@
 .long-card .deletebtn:hover {
     color: darkred;
 }
+
+.long-card input[type='checkbox'] {
+    margin: 0 auto;
+    font-size: 2rem;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid #555;
+}
+
+.quantity-input {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}

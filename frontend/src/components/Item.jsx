@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import image from '../assets/image.png';
 
-function Item({ item, setSelectedItems, selectedItems }) {
+function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
 
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(isAdmin ? item.quantity : 0)
 
     const handleQuantityChange = (change) => {
         const newQuantity = quantity + change;
@@ -52,7 +52,7 @@ function Item({ item, setSelectedItems, selectedItems }) {
                 <div>
                     <p>{item.quantity} items left</p>
                     <p>{formatTimestamp(item.expiry)}</p>
-                    {quantity == 0 ? (<button onClick={() => handleQuantityChange(1)}>Add to Cart</button>) : (
+                    {(quantity == 0 && !isAdmin) ? (<button onClick={() => handleQuantityChange(1)}>Add to Cart</button>) : (
                         <div className='quantity'>
                             <button onClick={() => handleQuantityChange(-1)}>-</button>
                             <p>{quantity}</p>
