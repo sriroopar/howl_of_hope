@@ -1,6 +1,6 @@
 # "Howl Of Hope" by Mystic 4ce
 
-Application to address food insecurity
+An novel solution to provide awareness and exposure to resources for students facing food insecurity issues at a University level.
 
 # Team Members
 
