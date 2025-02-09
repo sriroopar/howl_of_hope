@@ -22,7 +22,7 @@ function Item({ item, setSelectedItems, selectedItems }) {
                         si._id === item._id ? { ...si, quantity: newQuantity } : si
                     );
                 } else {
-                    return [...prev, { _id: item._id, quantity: newQuantity }];
+                    return [...prev, { ...item, quantity: newQuantity }];
                 }
             }
         });
@@ -46,10 +46,10 @@ function Item({ item, setSelectedItems, selectedItems }) {
 
     return (
         <div className='card grid-col'>
+            <h3>{item.name}</h3>
             <div className='row1'>
                 <img src={image} alt="" />
                 <div>
-                    <h3>{item.name}</h3>
                     <p>{item.quantity} items left</p>
                     <p>{formatTimestamp(item.expiry)}</p>
                     {quantity == 0 ? (<button onClick={() => handleQuantityChange(1)}>Add to Cart</button>) : (

@@ -3,6 +3,7 @@ html {
     font-family: "Nunito", serif;
     background-color: var(--bg-primary);
     color: var(--font-primary);
+    position: relative;
 }
 
 /* Set core body defaults */
