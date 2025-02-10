@@ -45,3 +45,16 @@ a:hover,
 a:focus {
     border-bottom: 2px solid var(--font-primary);
 }
+
+.qrcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.qrcode {
+    width: 350px;
+    height: 350px;
+}

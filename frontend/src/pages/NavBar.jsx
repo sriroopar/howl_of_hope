@@ -5,6 +5,7 @@ import { signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 
 function NavBar() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const isAdmin = localStorage.getItem('isAdmin') || false
 
     // Check authentication state on component mount
     useEffect(() => {
@@ -61,7 +62,7 @@ function NavBar() {
                         </>
                     ) : (
                         <>
-                            <NavLink to="/profile" className={({ isActive }) => isActive ? "active" : ""}>User Profile</NavLink>
+                            <NavLink to="/profile" className={({ isActive }) => isActive ? "active" : ""}>{isAdmin ? 'Admin' : 'User Profile'}</NavLink> |
                             <Link onClick={handleUserSignOut}>Sign Out</Link>
                         </>
                     )}

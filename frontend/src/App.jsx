@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import AdminOptions from './pages/AdminOptions';
 import AddMenu from './pages/AddMenu';
 import Success from './pages/Success';
+import Chatbot from './chatbot/ChatBot';
 
 function App() {
   const [selectedItems, setSelectedItems] = useState([])
@@ -48,6 +49,7 @@ function App() {
               <Route path='/' exact element={<Landing />} />
             </Routes>
           </div>
+          <Chatbot />
           <Footer />
         </BrowserRouter>
       </div>

@@ -24,10 +24,11 @@
 
 .card,
 .card .grid-col {
-    background: rgb(249, 236, 232);
+    background: var(--font-primary);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--bg-tertiary);
     text-align: center;
     transition: transform 0.3s ease-in-out;
     display: grid;
@@ -97,6 +98,10 @@
     text-align: center;
 }
 
+.card button {
+    color: var(--bg-tertiary);
+}
+
 .card .quantity p {
     display: inline-block;
 }
@@ -141,6 +146,7 @@
 .card .tag {
     padding: 5px;
     background-color: var(--bg-secondary);
+    color: var(--font-primary);
     border-radius: 4px;
     min-width: max-content;
     height: 30px;

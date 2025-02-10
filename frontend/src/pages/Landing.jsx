@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import '../styles/Landing.css';
 
 function Landing() {
-  const isAdmin = false;
+  const isAdmin = localStorage.getItem("isAdmin") || false;
 
   return (
     <div className="landing-container">
-      <h1 className="title">All-In-One</h1>
-      <h1>Sustain, Support, Share – Empowering Students, Reducing Waste!</h1>
+      <h1 className="title">Howl of Hope</h1>
+      <h2 className="sub-title">Zero hunger by 2030</h2>
+      <h4>Sustain, Support, Share – Empowering Students, Reducing Waste!</h4>
       <p className="paragraph">
         💚 Why waste when we can give? All-In-One is your go-to campus sustainability hub!
         Got extra food? Share it. Need essentials? We got you. Want to help? Join the movement.

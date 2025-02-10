@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import image from '../assets/image.png';
+import pantry from '../assets/pantry.jpeg';
+import food from '../assets/food.jpeg';
 
 function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
     const [quantity, setQuantity] = useState(isAdmin ? item.quantity : 0)
@@ -47,7 +48,7 @@ function Item({ item, setSelectedItems, selectedItems, isAdmin }) {
         <div className='card grid-col'>
             <h3>{item.name}</h3>
             <div className='row1'>
-                <img src={image} alt="" />
+                <img src={item.type === "Readymade" ? food : pantry} alt="" />
                 <div>
                     <p>{item.quantity} items left</p>
                     <p>{formatTimestamp(item.expiry)}</p>
