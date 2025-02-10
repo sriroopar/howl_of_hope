@@ -14,7 +14,7 @@ load_dotenv(override=True)
 OPENAI_API_KEY = "key"
 
 # Load the uploaded CSV file
-data_file = "../Hackathon/web_scraped_data.csv"
+data_file = "./web_scraped_data.csv"
 loader = CSVLoader(file_path=data_file, encoding='utf-8')
 data = loader.load()
 
@@ -33,8 +33,8 @@ def query_bot(query):
     return response['answer']
 
 # Streamlit UI Configuration
-st.set_page_config(page_title="GrokBot 🤖")
-st.title("GrokBot 🤖")
+st.set_page_config(page_title="Tuffy 🐺")
+st.title("Talk with Tuffy 🐺")
 
 # Initialize session state
 if 'history' not in st.session_state:
