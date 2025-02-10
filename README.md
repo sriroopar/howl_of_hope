@@ -74,6 +74,14 @@ As international students working as student employees in dining halls, we encou
 - npm install
 - nodemon index.js
 
+## Chat Bot
+
+- cd chat_agent
+- python3 -m venv venv
+- source venv/bin/active
+- pip3 install -r requirements.txt
+- streamlit run chat_agent.py
+
 # Testing the application
 
 ## Frontend
@@ -83,3 +91,7 @@ As international students working as student employees in dining halls, we encou
 ## Backend
 
 - Open http://localhost:3000 on a browser
+
+## Chat Bot
+
+- Open http://localhost:8501 on a browser
